@@ -9,15 +9,15 @@ function App() {
   const [loading , setLoading] = useState(true);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   const handleContextMenu = (event) => {
-  //     event.preventDefault();
-  //   };
-  //   document.addEventListener('contextmenu', handleContextMenu);
-  //   return () => {
-  //     document.removeEventListener('contextmenu', handleContextMenu);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const handleContextMenu = (event) => {
+      event.preventDefault();
+    };
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
 
   useEffect(()=>{
     authService.getCurrentUser()
